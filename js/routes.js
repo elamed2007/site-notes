@@ -1,7 +1,7 @@
 // Routes map: URL path -> { html view, page css, page scripts }
 // (case-insensitive lookups are handled by router.js, so only lowercase keys are kept)
 const routes = {
-    '/':                         { html: 'views/dashboard.html',     css: 'css/pages/dashboard.css',     script: [] },
+    '/':                         { html: 'views/login.html',         css: 'css/pages/login.css',         script: ['js/views/login.js'] },
     '/login.html':               { html: 'views/login.html',         css: 'css/pages/login.css',         script: ['js/views/login.js'] },
     '/dashboard.html':           { html: 'views/dashboard.html',     css: 'css/pages/dashboard.css',     script: [] },
     '/chats.html':               { html: 'views/chats.html',         css: 'css/pages/chats.css',         script: ['js/views/chats.js'] },
