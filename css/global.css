@@ -158,7 +158,15 @@ ul li{
     background-color: rgba(0, 255, 255, 0.484);
 }
 
-ul li a,ul li h2{
+ul li a{
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+
+ul li h2{
     margin-left: 35px;
     text-transform: capitalize;
     letter-spacing: 1px;
