@@ -201,11 +201,70 @@ footer{
     padding: 20px 0px;
     color: #fff;
     letter-spacing: 1px;
+    text-align: center;
+    font-size: 18px;
 }
 
 footer p{
     font-size: 16px;
     font-weight: 600;
+    color: #fff;
+}
+
+.footer-name{
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.footer-desc{
+    margin: 8px 0;
+    font-size: 17px;
+    opacity: 0.9;
+}
+
+.linkedin-btn{
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 24px;
+    border-radius: 25px;
+    background-color: #0077b5;
+    color: white;
+    font-size: 17px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.linkedin-btn:hover{
+    background-color: #005f91;
+}
+
+.contact-btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.contact-btns .linkedin-btn{
+    margin-top: 0;
+}
+
+.contact-btns a:nth-child(1){
+    background-color: #25d366;
+}
+
+.contact-btns a:nth-child(1):hover{
+    background-color: #1da851;
+}
+
+.contact-btns a:nth-child(2){
+    background-color: #ea4335;
+}
+
+.contact-btns a:nth-child(2):hover{
+    background-color: #c5221f;
 }
 
 /* ============ RESPONSIVE ============ */
