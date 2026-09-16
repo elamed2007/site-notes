@@ -1,0 +1,144 @@
+.content{
+    font-size: 20px;
+}
+
+.upload_img{
+    width: 50%;
+    margin: auto;
+    width: fit-content;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+
+}
+
+.upload_img img{
+    height: 250px;
+    width: 250px;
+}
+
+input[type = "file"]{
+    font-size: 32px;
+    position: absolute;
+    top: 50%;
+    opacity: 0;
+    transform: translate(-50%,-50%) scale(10);
+    cursor: pointer;
+    z-index: 10;
+}
+
+.upload_img i{
+    position: absolute;
+    bottom: 18px;
+    right: 30px;
+    background-color: rgb(5, 116, 172);
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+.box_info{
+    background-color: #b3b2b2;
+    color: black;
+    margin: 15px;
+    text-transform: capitalize;
+    border-radius: 5px;
+}
+
+.box_info > *{
+    padding: 10px;
+}
+
+.box_info h3{
+    background-color: rgb(140, 140, 141);
+    padding: 10px;
+    border-radius: inherit;
+    font-size: 30px;
+}
+
+#info_fix p span{
+    color: rgb(1, 1, 110);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.box_input{
+    display: flex;
+    flex-direction: column;
+}
+
+.box_input > *{
+    margin: 5px;
+}
+
+label{
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.box_input input{
+    background-color: transparent;
+    border: 1px solid #000;
+    outline: none;
+    padding: 10px;
+    font-size: inherit;
+    margin-left: 20px;
+    border-radius: 5px;
+    font-size: 20px;
+    transition: all 0.2s ease;
+}
+
+.box_input input:focus{
+    box-shadow: inset 5px 5px  5px #000;
+    background: #242323;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.box_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    padding: 5px 80px;
+}
+
+/* ============ RESPONSIVE ============ */
+
+@media (max-width: 768px){
+    .upload_img img{
+        height: 180px;
+        width: 180px;
+    }
+
+    .upload_img i{
+        bottom: 12px;
+        right: 22px;
+        font-size: 16px;
+    }
+
+    input[type = "file"]{
+        font-size: 18px;
+    }
+
+    .box_input input{
+        margin-left: 0;
+        font-size: 16px;
+    }
+
+    label{
+        font-size: 18px;
+    }
+
+    button{
+        width: 100%;
+        padding: 8px 0;
+        font-size: 20px;
+    }
+
+    .content{
+        font-size: 16px;
+    }
+}

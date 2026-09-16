@@ -1,0 +1,212 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.content h2{
+    margin: 30px 0px;
+    font-size: 30px;
+    text-transform: capitalize;
+    background-color: rgb(0, 119, 255);
+    border-radius: 5px;
+    padding: 7px;
+}
+
+#cards{
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    gap: 10px;
+}
+
+#cards div{
+    background-color: #ffc100;
+    padding: 5px 0px;
+    text-align: center;
+    border-radius: 10px;
+    transform: translateY(-200px);
+    animation: slideloop 1s ease forwards;
+    transition: all 0.3s ease;
+}
+
+@keyframes slideloop {
+	0%{
+		transform: translateY(-200px) scale(0);
+		opacity: 0;
+	}80%{
+		transform: translateY(0px) scale(1);
+		opacity: 0.7;
+	}100%{
+		transform: translateY(0) scale(1);
+		opacity: 1;
+	}
+
+}
+
+#cards div:nth-child(1){
+	animation-delay: 0s
+}
+
+#cards div:nth-child(2){
+	animation-delay: 0.5s
+}
+
+#cards div:nth-child(3){
+	animation-delay: 1s
+}
+
+#cards div:nth-child(4){
+	animation-delay: 1.5s
+}
+
+#cards div:hover{
+    cursor: pointer;
+    background-color: #d9a400;
+    scale: 1.03;
+    translate: 0px -5px;
+}
+
+#cards div p{
+    padding-bottom: 15px;
+    color: #000;
+}
+
+#cards div span{
+    color: blue;
+    font-weight: 600;
+}
+
+#progress div{
+    margin: 10px 0px;
+}
+
+#progress div p{
+    margin-bottom: 10px;
+    font-size: 26px;
+}
+
+#progress div span{
+    position: relative;
+    display: block;
+    width: 95%;
+    height: 35px;
+    background-color: #4f4f4f;
+    padding: 5px;
+    margin-left: 30px;
+    border-radius: 20px;
+    z-index: 1;
+    text-align: right;
+}
+
+#progress div span::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg,rgb(58, 1, 244),cyan);
+    height: 100%;
+    z-index: -1;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    color: blue;
+    padding-right: 10px;
+    font-weight: 600;
+}
+
+#progress div:nth-of-type(1) span::after{
+    content: '35H';
+    width: 50%;
+}
+
+#progress div:nth-of-type(2) span::after{
+    content: '7.5H';
+    width: 18%;
+}
+
+#progress div:nth-of-type(3) span::after{
+    content: '72H';
+    width: 60%;
+}
+
+#progress div:nth-of-type(4) span::after{
+    content: '30H';
+    width: 40%;
+}
+
+#d_points table{
+    width: 100%;
+    background-color: gainsboro;
+    color: #000;
+    border-radius: 6px;
+}
+
+#d_points table th,td{
+    padding: 15px 0px;
+    text-transform: capitalize;
+} 
+
+#d_points table td{
+    text-align: center;
+}
+
+/* ============ RESPONSIVE ============ */
+
+@media (max-width: 1024px){
+    #cards{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px){
+    .content{
+        padding: 10px;
+    }
+
+    .content *{
+        font-size: 16px;
+    }
+
+    .content h2{
+        font-size: 20px;
+        margin: 15px 0;
+        padding: 5px;
+    }
+
+    #cards{
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    #cards div p{
+        padding-bottom: 8px;
+    }
+
+    #progress div p{
+        font-size: 18px;
+    }
+
+    #progress div span{
+        width: 100%;
+        height: 28px;
+        margin-left: 0;
+        padding: 4px;
+    }
+
+    #d_points table{
+        width: 100%;
+        table-layout: fixed;
+    }
+}
+
+@media (max-width: 480px){
+    .content *{
+        font-size: 14px;
+    }
+
+    .content h2{
+        font-size: 18px;
+    }
+}

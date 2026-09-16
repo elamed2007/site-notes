@@ -1,0 +1,304 @@
+/* The wrapper is sticky so the header stays at the top of the page on scroll */
+#header{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #090979;
+    background: linear-gradient(90deg,rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    width: 100%;
+    height: 60px;
+    padding: 0px 80px;
+    color: #fff; 
+    letter-spacing: 1px;
+    z-index: 10;
+    
+}
+
+.logo{
+    font-size: 40px;
+} 
+
+.header_left{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#menu_btn{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    color: #fff;
+    font-size: 22px;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#menu_btn:hover{
+    background: rgba(255, 255, 255, 0.3);
+}
+
+header h2{
+    font-size: 24px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.container{
+    color: #fff;
+    display: flex;
+    max-height: 100%;
+    min-height:  calc(100vh - 60px);
+}
+
+.content{
+    width: 100%;
+    background-color: #272727;
+    font-size: 20px;
+}
+
+/* Shared form controls (page CSS only keeps the page-specific sizing) */
+select{
+    background-color: rgb(111, 139, 171);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 3px;
+    font-size: 22px;
+}
+
+select:focus{
+    box-shadow: 0px 0px 10px 1px cyan;
+}
+
+option{
+    background-color: #0f172b;
+    color: aliceblue;
+}
+
+button{
+    background: linear-gradient(90deg, blue, rgb(71, 71, 253));
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 25px;
+    color: #fff;
+    border: none;
+    outline: none;
+    transition: all 0.5s ease;
+}
+
+button:hover{
+    cursor: pointer;
+    background: linear-gradient(-90deg, blue, rgb(71, 71, 253));
+}
+
+/* Content clears the fixed sidebar rail (71px) on desktop/tablet */
+main#app{
+    margin-left: 71px;
+}
+
+#sidebar{
+    height:100%;
+}
+
+aside{
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 71px;
+    background: linear-gradient(44deg, rgb(3, 55, 138) 35%, rgba(99, 149, 255, 1) 100%);
+    z-index: 10;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: width 0.5s ease;
+}
+
+aside:hover{
+    width: 400px;
+}
+
+ul{
+    list-style: none;
+    margin-left: 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+ul li{
+    width: 350px;
+    font-size: 25px;
+    display: flex;
+    padding: 12px 10px;
+    margin-bottom: 8px;
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.profile ~ li:hover,.active{
+    background-color: rgba(0, 255, 255, 0.484);
+}
+
+ul li a,ul li h2{
+    margin-left: 35px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+ul li:last-child{
+    background-color: red;
+    margin-top: auto;
+    margin-bottom: 10px;
+}
+
+.profile{
+    margin-left: 0px;
+    margin-right: 20px;
+}
+
+.profile img{
+    width: 70px;
+    height: 70px;
+    border: 4px solid #000;
+    border-radius: 50%;
+    object-fit: cover;
+    transform: translateX(-18px);
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background: #090979;
+    background: linear-gradient(90deg, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    width: 100%;
+    padding: 20px 0px;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+footer p{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* ============ RESPONSIVE ============ */
+
+@media (max-width: 1024px){
+    header{
+        /* Left padding clears the fixed sidebar rail (71px) so the logo is not covered */
+        padding: 0 40px 0 91px;
+    }
+}
+
+@media (max-width: 768px){
+    header{
+        padding: 0 20px;
+        height: 55px;
+    }
+
+    header h2{
+        font-size: 15px;
+    }
+
+    .header_left{
+        gap: 10px;
+    }
+
+    #menu_btn{
+        display: flex;
+    }
+
+    .container{
+        min-height: calc(100vh - 55px);
+    }
+
+    main#app{
+        margin-left: 0;
+    }
+
+    /* off-canvas sidebar */
+    aside{
+        width: 280px;
+        transform: translateX(-110%);
+        transition: transform 0.4s ease;
+        z-index: 30;
+    }
+
+    aside:hover{
+        width: 280px;
+    }
+
+    body.menu-open aside{
+        transform: translateX(0);
+    }
+
+    body.menu-open::after{
+        content: '';
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+        z-index: 20;
+    }
+
+    ul{
+        height: 100%;
+    }
+
+    ul li{
+        width: 260px;
+        font-size: 18px;
+    }
+
+    ul li a,
+    ul li h2{
+        margin-left: 25px;
+        font-size: 18px;
+    }
+
+    .profile img{
+        width: 55px;
+        height: 55px;
+        transform: translateX(-12px);
+    }
+}
+
+@media (max-width: 480px){
+    header h2{
+        font-size: 13px;
+        max-width: 60%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .logo{
+        font-size: 28px;
+    }
+}
