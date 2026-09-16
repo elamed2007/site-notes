@@ -10,13 +10,6 @@ Visit Website: https://elamed2007.github.io/site-notes/
 
 Single-page application for OFPPT students: grades (notes), points, chat, reclamations and document requests. Pure HTML / CSS / JavaScript (no frameworks, no build step).
 
-## Run
-
-Any static server works. Two options:
-
-- PHP: `php -S 0.0.0.0:8000` then open http://localhost:8000 (or http://<PC-IP>:8000 from a phone on the same Wi-Fi)
-- Python: `python -m http.server 8123 --bind 127.0.0.1`
-
 ## Login
 
 - Username: `stagaire`
